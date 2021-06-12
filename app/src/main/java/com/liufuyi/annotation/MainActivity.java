@@ -3,14 +3,19 @@ package com.liufuyi.annotation;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.liufuyi.annotationlib.AnnotationInject;
+import com.liufuyi.annotationlib.BindView;
 import com.liufuyi.annotationlib.OnClick;
 import com.liufuyi.annotationlib.OnLongClick;
 
 public class MainActivity extends AppCompatActivity {
+
+    @BindView(R.id.click1)
+    Button button1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,6 +38,7 @@ public class MainActivity extends AppCompatActivity {
 //            }
 //        });
 
+        AnnotationInject.injectView(this);
         AnnotationInject.injectEvent(this);
     }
 
